@@ -304,4 +304,4 @@ MIT License - Voir LICENSE pour plus de détails
 
 - [librosa](https://librosa.org/) pour l'analyse audio
 - [ISF](https://isf.video/) pour l'inspiration des shaders
-- Communauté VJ pour les techniques de visualisation : (https://ravinkumar.com/GenAiGuidebook/audio/audio_feature_extraction.html)
+- Communauté VJ pour les techniques de [visualisation](https://ravinkumar.com/GenAiGuidebook/audio/audio_feature_extraction.html)
