@@ -2,6 +2,7 @@
 # Framework web
 Flask==3.0.0
 Werkzeug==3.0.1
+gunicorn==21.2.0
 
 # Analyse audio
 librosa==0.10.1
@@ -18,3 +19,6 @@ resampy==0.4.2
 
 # Visualisation (optionnel, pour debugging)
 matplotlib==3.8.2
+
+# Dépendances système pour audio (build)
+cffi==1.16.0

@@ -235,6 +235,64 @@ fetch('/api/analyze', {
 - Ouvrir la console développeur (F12) pour voir les erreurs
 - Tester avec un autre navigateur (Chrome/Firefox recommandés)
 
+## 🌐 Déploiement en ligne
+
+### Option 1 : Render.com (Gratuit & Recommandé)
+
+1. **Créer un compte sur [Render.com](https://render.com)**
+
+2. **Connecter votre dépôt GitHub**
+   - Cliquez sur "New +" → "Web Service"
+   - Connectez votre compte GitHub
+   - Sélectionnez le dépôt `Analify`
+
+3. **Configuration**
+   - **Name** : `analify` (ou le nom de votre choix)
+   - **Environment** : `Python 3`
+   - **Build Command** : `pip install -r requirements.txt`
+   - **Start Command** : `gunicorn main:app --bind 0.0.0.0:$PORT --timeout 120`
+   - **Plan** : `Free`
+
+4. **Variables d'environnement** (optionnel)
+   - `FLASK_ENV` = `production`
+
+5. **Déployer**
+   - Cliquez sur "Create Web Service"
+   - Attendez la fin du build (5-10 minutes)
+   - Votre app sera accessible sur `https://analify-xxxx.onrender.com`
+
+**⚠️ Limitations du plan gratuit** :
+- L'app se met en veille après 15 min d'inactivité
+- Premier chargement lent (30-60s pour réveiller)
+- 750h/mois gratuites
+
+### Option 2 : Railway.app
+
+1. Visitez [railway.app](https://railway.app)
+2. "Start a New Project" → "Deploy from GitHub"
+3. Sélectionnez votre dépôt
+4. Railway détecte automatiquement Python
+5. L'app sera déployée en quelques minutes
+
+### Option 3 : Heroku (Payant depuis 2022)
+
+Si vous avez un compte Heroku :
+```bash
+heroku login
+heroku create analify-app
+git push heroku main
+heroku open
+```
+
+### ❌ Pourquoi pas GitHub Pages ?
+
+GitHub Pages ne supporte **que des sites statiques** (HTML/CSS/JS). Votre application nécessite :
+- Un serveur Python (Flask)
+- L'exécution de code backend (librosa, sklearn)
+- Le traitement de fichiers uploadés
+
+→ Impossible avec GitHub Pages
+
 ## 📝 Licence
 
 MIT License - Voir LICENSE pour plus de détails
